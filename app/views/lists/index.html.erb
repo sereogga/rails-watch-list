@@ -1,0 +1,19 @@
+<div class="container">
+    <%= link_to 'Create List', new_list_path%>
+  <div class="row">
+      <% @lists.each do | list | %>
+        <div class="col-4">
+          <%= link_to list_path(list) do %>
+            <figure>
+              <div class="date"><span class="card-date-day">20</span><span class="card-date-month">APR</span></div>
+              <figcaption>
+                <h4> <span><%= list.name.upcase %></span></h4>
+                <p>Discover <%= list.name %> movies</p>
+              </figcaption>
+            </figure>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
